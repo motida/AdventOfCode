@@ -70,7 +70,7 @@ def calc_knot(hx, hy, tx, ty):
 
 for instruction in instructions:
     (direction, steps) = instruction
-    print(direction, steps)
+
     for step in range(int(steps)):
         match direction:
             case 'R':
@@ -81,19 +81,15 @@ for instruction in instructions:
                 ty[0] += 1
             case 'D':
                 ty[0] -= 1
-        #visited.add((tx[0],ty[0]))
 
-        #print('step ', step + 1)
-        #print_mat()
         for i in range(1, KNOTS):
             (tx[i], ty[i]) = calc_knot(tx[i-1], ty[i-1], tx[i], ty[i])
-            #print('knot', i)
-        #print_mat()
+ 
         visited.add((tx[KNOTS-1],ty[KNOTS-1]))
         
         
 
-print_mat()
+#print_mat()
 
 print(len(visited))
 
