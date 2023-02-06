@@ -38,7 +38,9 @@ def read_input():
         #print(true_throw, false_throw)
         fp.readline()
         monkies.append(Monkey(items, op, divisible, true_throw, false_throw))
-        
+
+    fp.close()
+       
     return monkies
 
 
